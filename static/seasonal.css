@@ -1,0 +1,45 @@
+.seasonal-research { margin: 26px 0; border: 1px solid #d7e1dd; border-radius: 16px; background: #fff; min-width: 0; }
+.seasonal-research > summary { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 22px 24px; cursor: pointer; list-style: none; }
+.seasonal-research > summary::-webkit-details-marker { display: none; }
+.seasonal-research > summary b { display: block; font-size: 20px; letter-spacing: -.3px; }
+.seasonal-summary-note { color: #657670; font-size: 13px; }
+.seasonal-research > summary::after { content: '+'; font-size: 25px; color: #43695d; }
+.seasonal-research[open] > summary::after { content: '−'; }
+.seasonal-body { padding: 0 24px 28px; min-width: 0; overflow-wrap: anywhere; }
+.seasonal-body h3 { font-size: 18px; margin: 28px 0 10px; }
+.seasonal-body p { line-height: 1.7; font-size: 14px; }
+.seasonal-conclusion { padding: 4px 0 14px; border-bottom: 1px solid #dde5e1; }
+.seasonal-conclusion h3 { font-size: 21px; margin-top: 4px; }
+.seasonal-meta, .seasonal-method-note { color: #687b73; font-size: 12px !important; }
+.seasonal-coverage { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 20px; padding: 14px 0; }
+.seasonal-coverage > div { display: flex; flex-direction: column; gap: 6px; border-left: 2px solid #d5e6de; padding-left: 14px; min-width: 0; }
+.seasonal-coverage b { font-size: 13px; }.seasonal-coverage span { font-size: 20px; font-variant-numeric: tabular-nums; }.seasonal-coverage small { color: #6e7d76; font-size: 11px; }
+.seasonal-matrix-scroll, .seasonal-comparison-scroll { width: 100%; overflow: auto; overscroll-behavior-x: contain; border: 1px solid #e0e7e3; border-radius: 10px; }
+.seasonal-matrix { width: 100%; min-width: 1020px; border-collapse: collapse; table-layout: fixed; font-size: 12px; }
+.seasonal-matrix th { text-align: center; background: #f4f7f5; padding: 12px 5px; }.seasonal-matrix th:first-child { width: 155px; text-align: left; padding-left: 12px; }
+.seasonal-matrix td { padding: 3px; border-top: 1px solid #e9eeeb; }
+.seasonal-cell { border: 1px solid transparent; border-radius: 6px; padding: 12px 3px; width: 100%; cursor: pointer; font: inherit; color: #485d54; background: #f6f8f7; min-height: 58px; transition: transform 160ms cubic-bezier(.2,.8,.2,1), opacity 160ms; }
+.seasonal-cell b { display: block; font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }.seasonal-cell small { display: block; margin-top: 5px; font-size: 10px; }
+.seasonal-cell.positive { background: #fcf0ed; color: #9d4c3d; }.seasonal-cell.negative { background: #eaf4ee; color: #3c7557; }.seasonal-cell.unknown { background: #f5f6f5; color: #839087; }
+.seasonal-cell:hover { opacity: .82; }.seasonal-cell:active { transform: scale(.98); }.seasonal-cell:focus-visible { outline: 2px solid #356f5c; outline-offset: 1px; }.seasonal-cell[aria-pressed=true] { border-color: #4d7868; }
+.seasonal-legend { display: flex; flex-wrap: wrap; gap: 8px 20px; margin: 12px 0; color: #607167; font-size: 12px; }
+.seasonal-distribution { border-left: 3px solid #bed5c8; padding: 6px 16px; margin: 20px 0; min-width: 0; scroll-margin-top: 20px; }
+.seasonal-distribution h4 { margin: 10px 0; font-size: 17px; }.seasonal-distribution dt { color: #6a7c72; }.seasonal-distribution dd { margin: 4px 0 0; font-weight: 600; }
+.seasonal-distribution dl { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 16px; font-size: 13px; }
+.seasonal-comparison { width: 100%; border-collapse: collapse; min-width: 630px; font-size: 13px; }.seasonal-comparison th, .seasonal-comparison td { text-align: left; border-bottom: 1px solid #e6ece8; padding: 12px; }.seasonal-comparison th { background: #f4f7f5; }.seasonal-comparison small { display: block; color: #738078; margin-top: 6px; }
+.seasonal-notice { background: #f3f6f3; padding: 12px 16px; border-radius: 8px; color: #536956; }
+.seasonal-window { border-top: 1px solid #e2e9e4; padding: 18px 0; }.seasonal-window-heading { display: flex; align-items: center; justify-content: space-between; gap: 14px; }.seasonal-window h4 { margin: 0; font-size: 18px; }.seasonal-state { font-size: 12px; color: #687a68; background: #f0f4ef; padding: 6px 10px; border-radius: 5px; flex-shrink: 0; }
+.seasonal-window-time { color: #667d70; font-variant-numeric: tabular-nums; font-size: 12px !important; }.seasonal-readings { display: flex; flex-wrap: wrap; gap: 16px; font-size: 13px; }.seasonal-readings b { margin-left: 6px; }
+.seasonal-window blockquote { margin: 16px 0; border-left: 2px solid #b6cabc; padding: 8px 14px; background: #fafbf9; font-size: 13px; }.seasonal-window blockquote p { font-size: 13px; }.seasonal-window cite { display: block; font-size: 12px; color: #768377; font-style: normal; margin-bottom: 8px; }
+.seasonal-audit { margin: 20px 0 0; border-top: 1px solid #e0e7e2; padding-top: 16px; }.seasonal-audit summary { cursor: pointer; color: #4b6657; }.seasonal-audit ul { padding-left: 20px; line-height: 1.8; font-size: 13px; }.seasonal-audit label { display: block; margin-bottom: 8px; }.seasonal-audit select { width: 100%; max-width: 550px; min-height: 42px; padding: 8px; border: 1px solid #cddbcf; border-radius: 6px; color: #3d5d49; background: #fff; }
+.seasonal-loading { opacity: .6; }.seasonal-error { color: #8a4e3c; }.seasonal-distribution button { cursor: pointer; }
+/* Keep research matrices tabular inside local scrollers at mobile widths. */
+#seasonal-research table { display: table; }
+#seasonal-research thead { display: table-header-group; }
+#seasonal-research tbody { display: table-row-group; }
+#seasonal-research tr { display: table-row; width: auto; padding: 0; }
+#seasonal-research td, #seasonal-research th { display: table-cell; width: auto; }
+#seasonal-research td::before { content: none; }
+#seasonal-research .seasonal-matrix th:first-child { width: 155px; }
+@media (max-width: 700px) { .seasonal-research > summary { padding: 18px 16px; align-items: start; }.seasonal-research > summary b { font-size: 17px; }.seasonal-summary-note { display: none; }.seasonal-body { padding: 0 16px 20px; }.seasonal-coverage { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px 10px; }.seasonal-coverage span { font-size: 17px; }.seasonal-distribution { padding-left: 10px; }.seasonal-distribution dl { grid-template-columns: repeat(2,minmax(0,1fr)); }.seasonal-window-heading { align-items: start; }.seasonal-window h4 { font-size: 16px; }.seasonal-conclusion h3 { font-size: 18px; }.seasonal-body h3 { font-size: 17px; } }
+@media (prefers-reduced-motion: reduce) { .seasonal-cell { transition: none; } }
