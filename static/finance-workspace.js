@@ -11,10 +11,11 @@
   const el = (tag, value, className) => { const n = document.createElement(tag); if (value !== undefined) n.textContent = value; if (className) n.className = className; return n; };
   const byId = id => document.getElementById(id);
   const uid = () => crypto.randomUUID();
+  const bytes = value => new TextEncoder().encode(value).byteLength;
   let events = [], persistent = true, originalRaw = null, storageRead = false;
   function unpack(raw) {
     if (!raw) return [];
-    if (raw.length > MAX_BYTES) throw new Error("备份超过5MB");
+    if (bytes(raw) > MAX_BYTES) throw new Error("备份超过5MB");
     const data = JSON.parse(raw);
     if (!data || data.version !== F.VERSION || !Array.isArray(data.events)) throw new Error("不是兼容的个人理财备份");
     return F.merge([], data.events);
@@ -28,7 +29,7 @@
   const pack = entries => JSON.stringify({version: F.VERSION, events: entries});
   function commit(next) {
     const raw = pack(next);
-    if (raw.length > MAX_BYTES) throw new Error("记录超过5MB，请先导出备份");
+    if (bytes(raw) > MAX_BYTES) throw new Error("记录超过5MB，请先导出备份");
     if (persistent) {
       try { localStorage.setItem(KEY, raw); }
       catch { persistent = false; byId("wealth-storage-status").textContent = "浏览器没有保存成功，本次仅暂存在内存。请立即导出；刷新后可能丢失。"; }
